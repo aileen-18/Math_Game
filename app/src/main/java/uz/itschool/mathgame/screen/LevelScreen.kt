@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -32,15 +34,39 @@ fun LevelScreen(navController: NavController){
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
-            Text(text = "Level Screen",
+            Button(
+                onClick = {
+                    navController.navigate("home_screen")
+                },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(15.dp)
-                    .background(Color.White),)
+                    .padding(15.dp),
+            ) {
+                Text(text = "Easy")
+            }
 
+            Button(
+                onClick = {
+                    navController.navigate("home_screen")
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(15.dp),
+                colors = ButtonDefaults.buttonColors()
+            ) {
+                Text(text = "Medium")
+            }
 
-
+            Button(
+                onClick = {
+                    navController.navigate("home_screen")
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(15.dp),
+            ) {
+                Text(text = "Hard")
+            }
         }
     }
 }
