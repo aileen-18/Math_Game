@@ -6,5 +6,6 @@ sealed class Screens(val route: String){
     object Level: Screens("level_screen")
     object Home: Screens("home_screen")
     object Record : Screens("record_screen")
+    object Result : Screens("result_screen" + "/{correct}" + "/{incorrect}" + "/{level}" + "/{new_record}")
 }
 
